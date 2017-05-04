@@ -16,23 +16,23 @@ module RedmineAnonymousAuthors
     end
 
     module InstanceMethods
-      def issue_add_with_anonymous(issue)
-        mail = issue_add_without_anonymous(issue)
+      def issue_add_with_anonymous(issue, to_users, cc_users)
+        mail = issue_add_without_anonymous(issue, to_users, cc_users)
         redmine_headers 'Issue-Author' => issue.author.anonymous? ? issue.author.mail : issue.author.login
         mail
       end
-      def issue_edit_with_anonymous(journal)
-        mail = issue_edit_without_anonymous(journal)
+      def issue_edit_with_anonymous(journal, to_users, cc_users)
+        mail = issue_edit_without_anonymous(journal, to_users, cc_users)
         issue = journal.journalized
         redmine_headers 'Issue-Author' => issue.author.anonymous? ? issue.author.mail : issue.author.login
         mail
       end
-      def mail_with_anonymous(headers={})
+      def mail_with_anonymous(headers={}, &block)
         if @author && @author.anonymous? && Setting.plugin_redmine_anonymous_authors[:no_self_notified] == '1'
           headers[:to].delete(@author.mail) if headers[:to].is_a?(Array)
           headers[:cc].delete(@author.mail) if headers[:cc].is_a?(Array)
         end
-        mail_without_anonymous(headers)
+        mail_without_anonymous(headers, &block)
       end
       def create_mail_with_anonymous
         if @author && @author.anonymous? && Setting.plugin_redmine_anonymous_authors[:no_self_notified] == '1'
