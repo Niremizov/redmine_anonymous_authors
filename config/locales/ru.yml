@@ -1,0 +1,11 @@
+ru:
+  field_author_name: Имя автора
+  field_author_mail: E-Mail автора
+  label_anonymous_no_self_notified: Не извещать автора об изменениях, которые сделал он сам
+  text_anonymous_no_self_notified: Установите галочку, если не хотите, чтобы анонимный автор получал письма о задачах, которые он создал или которые обновил
+  label_hide_anonymous_email: Прятать анонимные E-Mail адреса
+  text_hide_anonymous_email: Установите галочку, если не хотите, чтобы анонимные пользователи видели E-Mail адреса других анонимных пользователей
+  label_anonymous_format: Формат отображения ссылок на анонимных пользователей
+  label_anonymous_format_name: Только имя
+  label_anonymous_format_email: Только E-Mail
+  label_anonymous_format_name_and_email: Имя и E-Mail

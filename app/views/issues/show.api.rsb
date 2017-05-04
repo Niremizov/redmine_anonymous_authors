@@ -1,0 +1,3 @@
+xml = Nokogiri::XML(render(:parent))
+xml.at_xpath("/issue/author")['mail'] = @issue.author.mail if @issue.author.mail
+api << xml.root.to_s

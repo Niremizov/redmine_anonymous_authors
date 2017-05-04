@@ -1,0 +1,5 @@
+xml = Nokogiri::XML(render(:parent))
+xml.xpath('issues/issue').each_with_index do |issue, k|
+  issue.at_xpath('author')['mail'] = @issues[k].author.mail if @issues[k].author.mail
+end
+api << xml.root.to_s

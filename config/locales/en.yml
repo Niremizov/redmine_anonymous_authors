@@ -1,0 +1,11 @@
+en:
+  field_author_name: Author's name
+  field_author_mail: Author's E-Mail
+  label_anonymous_no_self_notified: Do not notify the author about changes that he did himself
+  text_anonymous_no_self_notified: Check if you don't want the anonymous author to receive emails about the issues he created or updated
+  label_hide_anonymous_email: Hide anonymous E-Mail addresses
+  text_hide_anonymous_email: Check if you don't want anonymous users to view E-Mail addresses of other anonymous users.
+  label_anonymous_format: The display format of the links to anonymous users
+  label_anonymous_format_name: Only name
+  label_anonymous_format_email: Only E-Mail
+  label_anonymous_format_name_and_email: Name & E-Mail

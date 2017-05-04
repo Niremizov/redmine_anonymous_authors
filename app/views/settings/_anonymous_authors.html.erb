@@ -1,0 +1,18 @@
+<p>
+  <label for="settings_no_self_notified"><%= l(:label_anonymous_no_self_notified) %></label>
+  <%= hidden_field_tag 'settings[no_self_notified]', '0', :id => nil %>
+  <%= check_box_tag 'settings[no_self_notified]', 1, @settings[:no_self_notified] == '1' %>
+  <em class="info"><%= l(:text_anonymous_no_self_notified) %></em>
+</p>
+<p>
+  <label for="settings_hide_anonymous_email"><%= l(:label_hide_anonymous_email) %></label>
+  <%= hidden_field_tag 'settings[hide_anonymous_email]', '0', :id => nil %>
+  <%= check_box_tag 'settings[hide_anonymous_email]', 1, @settings[:hide_anonymous_email] == '1' %>
+  <em class="info"><%= l(:text_hide_anonymous_email) %></em>
+</p>
+<p>
+  <label for="settings_anonymous_format"><%= l(:label_anonymous_format) %></label>
+  <%= select_tag 'settings[anonymous_format]', options_for_select(
+      RedmineAnonymousAuthors::ANONYMOUS_FORMATS.map {|f| [l("label_anonymous_format_"+f), f]},
+      @settings[:anonymous_format]) %>
+</p>

@@ -1,0 +1,7 @@
+<% if User.current.anonymous? %>
+  <div class="tabular">
+    <p><label for="author_name"><%= l(:field_author_name) %></label><%= text_field_tag :author_name, cookies[:author_name] %></p>
+    <p><label for="author_mail"><%= l(:field_author_mail) %></label><%= text_field_tag :author_mail, cookies[:author_mail] %></p>
+  </div>
+<% end %>
+
