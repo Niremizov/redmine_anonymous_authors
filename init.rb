@@ -1,4 +1,5 @@
 require 'redmine'
+require 'user'
 require 'redmine_anonymous_authors'
 require 'redmine_anonymous_authors/hooks'
 
