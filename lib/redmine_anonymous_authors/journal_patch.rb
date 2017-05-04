@@ -5,7 +5,7 @@ module RedmineAnonymousAuthors
     def self.included(base)
       base.send(:include, InstanceMethods)
       base.class_eval do
-        validates_format_of :user_mail, :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i, :allow_blank => true
+        validates_format_of :user_mail, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, :allow_blank => true
         alias_method_chain :user, :anonymous
         alias_method_chain :user=, :anonymous
       end
