@@ -7,6 +7,7 @@ module RedmineAnonymousAuthors
       base.class_eval do
         alias_method_chain :name, :anonymous
         alias_method_chain :mail, :anonymous
+        alias_method_chain :mail=, :anonymous
         alias_method_chain :active?, :anonymous
         attr_writer :name
       end
@@ -18,6 +19,10 @@ module RedmineAnonymousAuthors
       end
       def mail_with_anonymous
         self[:mail].presence
+      end
+      def mail_with_anonymous=(arg)
+        email = email_address || build_email_address
+        email.address = arg
       end
       def active_with_anonymous?
         true
