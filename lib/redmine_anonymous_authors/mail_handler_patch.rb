@@ -43,7 +43,8 @@ module RedmineAnonymousAuthors
       end
 
       def from_address
-        from_object && from_object.address
+        # TODO Keep an eye here, why from_object.address not working?
+        email.from.to_a.first.to_s.strip
       end
 
       def from_name
