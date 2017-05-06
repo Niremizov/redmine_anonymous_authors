@@ -18,7 +18,7 @@ module RedmineAnonymousAuthors
         @name.presence || I18n.t(:label_user_anonymous)
       end
       def mail_with_anonymous
-        self[:mail].presence
+        email_address.try(:address)
       end
       def mail_with_anonymous=(arg)
         email = email_address || build_email_address
