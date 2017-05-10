@@ -1,3 +1,7 @@
+= Port to 3.2.x of Redmine Anonymous Authors
+
+Port is check against Redmine 3.2.0 where is works correctly. If you need more control over replies that are sent to issue authors you can look at https://github.com/jfqd/redmine_helpdesk. And probably https://github.com/luismaia/redmine_email_fetcher could be also helpful.
+
 = Anonymous Authors plug-in
 
 Anonymous Authors plug-in:
@@ -32,7 +36,7 @@ After download:
 
 == Compatibility
 
-This plug-in is compatible with Redmine 1.4.x, 2.0.x, 2.1.x
+This plug-in is compatible with Redmine 1.4.x, 2.0.x, 2.1.x, 3.2.x
 
 == Changelog
 
